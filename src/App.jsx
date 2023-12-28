@@ -1,7 +1,17 @@
+import { BrowserRouter,Routes,Route } from "react-router-dom"
+import Login from "./pages/Login"
+import Client from "./components/layouts/Client"
 
 const App = () => {
   return (
-    <div>App</div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login/>} />
+        <Route path="/intranet" element={<Client/>}>
+          <Route index element={<h1>Welcome to system</h1>} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
